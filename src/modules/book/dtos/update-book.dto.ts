@@ -1,4 +1,4 @@
-import { UserDto } from "./user.dto";
+import { BookDto } from "./book.dto";
 
 export class UpdateBookDto {
 	title: string;
@@ -6,8 +6,8 @@ export class UpdateBookDto {
 	year: string;
 	genre: string;
 
-	static fromDto(updateBookDto: UpdateBookDto): UserDto {
-		let book = new UserDto();
+	static fromDto(updateBookDto: UpdateBookDto): BookDto {
+		let book = new BookDto();
 
 		book.title = updateBookDto.title;
 		book.author = updateBookDto.author;

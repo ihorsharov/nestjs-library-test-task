@@ -1,8 +1,9 @@
 import { AllowNull, AutoIncrement, BelongsTo, Column, ForeignKey, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { UserDto } from "../dtos/user.dto";
 import Role from "./role.model";
 
 @Table({tableName: 'users'})
-class User extends Model {
+class User extends Model<UserDto, Omit<UserDto, 'id'>> {
 	@PrimaryKey
 	@AutoIncrement
 	@Column
@@ -22,7 +23,7 @@ class User extends Model {
 	roleId: number;
 
 	@BelongsTo(() => Role)
-	userRole: Role;
+	role: Role;
 
 }
 

@@ -1,8 +1,8 @@
 import { AllowNull, AutoIncrement, Column, DataType, Model, PrimaryKey, Table } from "sequelize-typescript";
-import { CreateBookDto } from "../dtos/create-book.dto";
+import { BookDto } from "../dtos/book.dto";
 
 @Table({tableName: 'books'})
-class Book extends Model<Book, CreateBookDto> {
+class Book extends Model<BookDto, Omit<BookDto, 'id'>> {
 	@PrimaryKey
 	@AutoIncrement
 	@Column
